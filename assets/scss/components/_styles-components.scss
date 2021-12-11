@@ -1,0 +1,49 @@
+%contenedorPrecioPaquete {
+  border: 1px solid hsl(0, 0%, 88%);
+  background-color: $whiteColor;
+  padding: 40px 0;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    border: 1px solid $primaryColor;
+    box-shadow: 0px 0px 50px hsl(0, 0%, 40%);
+  }
+
+  h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+  }
+
+  .numero {
+    font-family: "Oswald", sans-serif;
+    color: hsl(0, 0, 0);
+    font-size: 5.6em;
+    margin: 5px 0;
+    font-weight: bold;
+  }
+
+  section {
+    font-family: "PT Sans", sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    p {
+      color: hsl(0, 0%, 53%);
+      text-transform: uppercase;
+      padding: 10px 0;
+      i {
+        padding-right: 5px;
+        font-size: 2rem;
+        color: green;
+      }
+    }
+  }
+}
+
+%inputStyle {
+  font-size: 1.6rem;
+  font-family: "PT Sans", sans-serif;
+  padding: 3px;
+}

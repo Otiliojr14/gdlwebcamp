@@ -1,0 +1,71 @@
+/* Estilos Header */
+
+.header-cover {
+  background-image: url(../img/encabezado.jpg);
+  height: 100vh;
+  background-position: top center;
+  background-size: cover;
+
+  p,
+  h1 {
+    font-size: 1.4rem;
+    color: $whiteColor;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: 9vw;
+    span {
+      position: relative;
+      text-shadow: 0 0 30px black;
+    }
+  }
+}
+.header-social {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+
+  a {
+    color: $whiteColor;
+    font-size: 2.6rem;
+    padding: 0 10px;
+    transform: scale(1);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+}
+.header-information {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .header-place {
+    justify-self: end;
+  }
+
+  p i {
+    color: $primaryColor;
+    padding: 0 5px;
+    font-size: 2rem;
+  }
+}
+.header-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-family: "PT Sans", sans-serif;
+    text-transform: uppercase;
+  }
+
+  p {
+    text-transform: none;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}

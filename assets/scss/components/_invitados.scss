@@ -1,0 +1,52 @@
+/* Estilos de la sección invitados */
+.index-invitados {
+  margin: 30px auto;
+}
+
+.invitados-container {
+  width: 95%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-row-gap: 15px;
+
+  .invitado__article {
+    figure {
+      overflow: hidden;
+      position: relative;
+      img {
+        width: 100%;
+        filter: grayscale(1);
+        transform: scale(1);
+        transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out;
+      }
+
+      figcaption {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 10px 15px;
+        margin: 0;
+        background-color: hsla(0, 0, 0, 0.55);
+        width: 100%;
+        font-family: "Oswald", sans-serif;
+        color: $primaryColor;
+        font-size: 2.4rem;
+        text-transform: uppercase;
+        opacity: 1;
+        transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      }
+      &:hover {
+        img {
+          filter: grayscale(0);
+          transform: scale(1.1);
+        }
+        figcaption {
+          bottom: -80px;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

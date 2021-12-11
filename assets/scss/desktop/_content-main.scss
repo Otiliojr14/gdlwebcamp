@@ -1,0 +1,76 @@
+.invitados-container {
+  width: $widthComputerContainer;
+  max-width: $maxWidthContainer;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px 40px;
+}
+
+.index-contador .contador__content,
+.index-contador-tiempo .tiempo__content {
+  display: flex;
+  justify-content: space-evenly;
+}
+.index-precios {
+  .precios__container {
+    width: $widthComputerContainer;
+    max-width: $maxWidthContainer;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+  }
+}
+
+.index-testimoniales {
+  .testimoniales__container {
+    width: $widthComputerContainer;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    max-width: $maxWidthContainer;
+  }
+}
+
+.index-footer {
+  .footer__container {
+    width: $widthComputerContainer;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 35px;
+    max-width: $maxWidthContainer;
+    padding: 40px 0;
+  }
+}
+
+/* Página reservaciones */
+
+.form-reservation {
+  width: $widthComputerContainer;
+  max-width: $maxWidthContainer;
+
+  .reservation-user-data {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+
+    .field-form {
+      label {
+        margin: unset;
+        margin-bottom: 10px;
+      }
+      input {
+        width: 80%;
+      }
+    }
+  }
+
+  .pack-reservation {
+    .precios__container {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-column-gap: 10px;
+    }
+  }
+}

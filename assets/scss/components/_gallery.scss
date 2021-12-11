@@ -1,0 +1,23 @@
+.gallery {
+    margin: 40px auto;
+    &-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 10px;
+        grid-column-gap: 10px;
+        width: 95%;
+        margin: 0 auto;
+
+        figure {
+            justify-self: center;
+            width: 100%;
+            a {
+                width: 100%;
+    
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

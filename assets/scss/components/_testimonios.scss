@@ -1,0 +1,53 @@
+.index-testimoniales {
+  margin: 40px 0;
+
+  .testimoniales__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-row-gap: 10px;
+    width: 95%;
+    margin: 0 auto;
+
+    .testimonial {
+      background-color: $whiteColor;
+      border: 1px solid #e1e1e1;
+      padding: 25px;
+
+      blockquote {
+        margin-bottom: 10px;
+        text-align: justify;
+        font-family: "PT Sans", sans-serif;
+        margin-bottom: 20px;
+        p {
+          font-size: 1.6rem;
+        }
+      }
+      section {
+        display: flex;
+        justify-content: center;
+        figure {
+          width: 30%;
+          align-self: center;
+          img {
+            width: 100%;
+            border-radius: 50%;
+          }
+        }
+        p {
+          align-self: center;
+          text-align: center;
+          margin-left: 10px;
+          cite {
+            display: block;
+          }
+          .author {
+            color: $primaryColor;
+            font-style: normal;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

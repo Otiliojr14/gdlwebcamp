@@ -1,0 +1,109 @@
+h2 {
+  font-size: 3.6rem;
+  max-width: $maxWidthContainer;
+}
+
+/* Estilos Header Computadora */
+
+.header-cover {
+  p {
+    font-size: 1.8rem;
+  }
+  .char1 {
+    top: 20px;
+    right: 20px;
+  }
+  .char2 {
+    top: 0px;
+    left: -20px;
+  }
+  .char3 {
+    top: 10px;
+    right: 20px;
+  }
+  .char4 {
+    top: 5px;
+    right: 10px;
+  }
+  .char5 {
+    top: 15px;
+    right: 10px;
+  }
+  .char6 {
+    top: 5px;
+    left: 10px;
+  }
+  .char7 {
+    top: 20px;
+    left: -10px;
+  }
+  .char8 {
+    top: 0px;
+    left: 3px;
+  }
+  .char9 {
+    top: 10px;
+    right: 20px;
+  }
+  .char10 {
+    top: 20px;
+    right: 20px;
+  }
+}
+.header-information {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 50px;
+
+  p i {
+    font-size: 2.8rem;
+  }
+}
+
+/* Estilos de barra de navegación */
+
+.content-bar {
+  width: 90%;
+  max-width: $maxWidthContainer;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  .menu-movil {
+    display: none;
+  }
+
+  .bar-navegacion {
+    width: unset;
+    grid-column: 2 / span 2;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+
+    a {
+      margin: 0 5px;
+    }
+  }
+}
+
+/* Estilos de sección conferencias */
+.description-event p {
+  font-size: 1.7rem;
+  max-width: $maxWidthContainer;
+}
+
+.content-section {
+  .content {
+    width: 95%;
+    max-width: $maxWidthContainer;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.content-programa {
+  max-width: 470px;
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

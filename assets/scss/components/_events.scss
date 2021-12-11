@@ -1,0 +1,65 @@
+.events-reservation {
+  width: $widthMovilContainer;
+  margin: 30px auto;
+  font-size: 1.6rem;
+
+  h3 {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .events__container {
+    background-color: $whiteColor;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid hsl(0, 0%, 88%);
+
+    section {
+      padding: 10px 0;
+      display: none;
+
+      h4 {
+        text-transform: uppercase;
+        border-bottom: 2px solid $primaryColor;
+        font-size: 2rem;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
+
+      .day-event__container {
+        display: flex;
+        flex-direction: column;
+
+        article {
+          display: flex;
+          flex-direction: column;
+          padding: 10px 0;
+          width: $widthMovilContainer;
+          margin: 0 auto;
+          text-align: start;
+
+          p {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+          }
+
+          label {
+            margin-bottom: 5px;
+
+            time {
+              color: $primaryColor;
+              font-weight: bold;
+            }
+          }
+
+          input {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}

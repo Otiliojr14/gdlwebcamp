@@ -1,0 +1,54 @@
+.index-newsletter {
+  height: auto;
+  background-image: url(../img/bg-newsletter.jpg);
+  background-position: bottom center;
+  background-size: cover;
+
+  .newsletter__container {
+    padding: 100px 0;
+    color: $whiteColor;
+    text-align: center;
+
+    p {
+      color: $whiteColor;
+      font-size: 2.4rem;
+      text-transform: lowercase;
+    }
+
+    h3 {
+      color: $whiteColor;
+      text-transform: uppercase;
+      font-size: 7vw;
+      font-family: "PT Sans", sans-serif;
+      margin-bottom: 20px;
+    }
+  }
+}
+.index-contador-tiempo {
+  margin: 30px 0;
+
+  .tiempo__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    article {
+      margin: 25px 0;
+    }
+
+    article,
+    p {
+      color: hsl(0, 0, 0);
+      font-family: "Oswald", sans-serif;
+      font-size: 2.4rem;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    article h1 {
+      color: $primaryColor;
+      font-size: 4em;
+    }
+  }
+}

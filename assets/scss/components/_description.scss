@@ -1,0 +1,82 @@
+/* Estilos de la sección conferencias */
+
+.description-event {
+  padding: 30px 0;
+
+  p {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.programa-conferencias {
+  position: relative;
+
+  .video-section {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+.content-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+.content-programa {
+  background-color: hsla(0, 0, 100, 0.8);
+  margin: 80px 0;
+  padding: 15px;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $primaryColor;
+    align-items: center;
+    a {
+      margin: 5px 0;
+      font-family: "Oswald", sans-serif;
+      font-size: 1.7rem;
+
+      i {
+        margin-right: 5px;
+        color: $primaryColor;
+        font-size: 1.9rem;
+      }
+    }
+  }
+
+  article {
+    p {
+      padding: 5px 0;
+      font-size: 1.7rem;
+      margin: 10px 0;
+    }
+    section {
+      padding: 10px 0;
+      border-bottom: 1px solid $blackColor;
+
+      &:nth-child(2) {
+        border-bottom: none;
+      }
+      i {
+        margin-right: 5px;
+        color: $primaryColor;
+      }
+    }
+    a {
+      display: inline-block;
+      text-align: end;
+      float: right;
+      font-size: 1.7rem;
+    }
+  }
+}

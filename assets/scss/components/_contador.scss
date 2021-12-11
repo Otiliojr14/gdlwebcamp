@@ -1,0 +1,33 @@
+/* Estilos de la sección contador */
+
+.index-contador {
+  background-image: url(../img/bg-resumen.jpg);
+  background-position: center center;
+  background-size: cover;
+  padding: 120px 0;
+  filter: brightness(0.9);
+
+  .contador__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    article {
+      margin: 25px 0;
+    }
+
+    article,
+    p {
+      color: $whiteColor;
+      font-family: "Oswald", sans-serif;
+      font-size: 2.4rem;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    article h1 {
+      color: $primaryColor;
+      font-size: 4em;
+    }
+  }
+}

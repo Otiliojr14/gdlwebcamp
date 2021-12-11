@@ -1,0 +1,48 @@
+.events-reservation {
+  width: $widthComputerContainer;
+  max-width: $maxWidthContainer;
+
+  .events__container {
+    section {
+      .day-event__container {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 10px;
+      }
+    }
+  }
+}
+
+.resume-reservation {
+  width: $widthComputerContainer;
+  max-width: $maxWidthContainer;
+
+  .resume__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    .extra {
+      align-items: flex-start;
+
+      .orden {
+        align-items: flex-start;
+
+        label {
+          text-align: start;
+        }
+      }
+
+      .orden:last-child {
+        align-self: center;
+      }
+    }
+
+    .total {
+      .resumen {
+        margin: unset;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
