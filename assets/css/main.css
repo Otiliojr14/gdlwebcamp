@@ -488,6 +488,7 @@ h3 {
 /* Estilos de la sección contador */
 .index-contador {
   background-image: url(../img/bg-resumen.jpg);
+  background-attachment: fixed;
   background-position: center center;
   background-size: cover;
   padding: 120px 0;
@@ -635,6 +636,7 @@ h3 {
 .index-newsletter {
   height: auto;
   background-image: url(../img/bg-newsletter.jpg);
+  background-attachment: fixed;
   background-position: bottom center;
   background-size: cover;
 }

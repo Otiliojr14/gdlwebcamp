@@ -182,4 +182,4 @@ $(function () {
       $('#segundos').html(event.strftime('%S')); 
     });
     
-})();
+});
