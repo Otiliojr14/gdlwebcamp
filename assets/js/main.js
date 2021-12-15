@@ -30,123 +30,125 @@
         const camisas = document.querySelector('#camisa_evento');
         const etiquetas = document.querySelector('#etiquetas');
 
-        calcular.addEventListener('click', calcularMontos);
-
-        pase_dia.addEventListener('blur', mostrarDias);
-        pase_completo.addEventListener('blur', mostrarDias);
-        pase_dosdias.addEventListener('blur', mostrarDias);
-
-        nombreUser.addEventListener('blur', validarFormulario);
-        lastNameUser.addEventListener('blur', validarFormulario);
-        mailUser.addEventListener('blur', validarFormulario);
-
-        function validarFormulario(e) {
-            const campo = e.target.parentElement;
-            const errorDiv = campo.querySelector('.error');
-
-            if (e.target.value === '') {                
-                e.target.style.border = '1px solid red';
-                errorDiv.innerHTML = 'Este campo es obligatorio';
-                errorDiv.style.display = 'block';
-            } else {
-                errorDiv.style.display = 'none';
-                e.target.style.border = '1px solid green';
-
-                if (e.target.type === 'email') {
-                    if (er.test( e.target.value )) {
-                        errorDiv.style.display = 'none';
-                        e.target.style.border = '1px solid green';
-                    } else {
-                        e.target.style.border = '1px solid red';
-                        errorDiv.innerHTML = 'Este email es inválido';
-                        errorDiv.style.display = 'block';
+        if (document.querySelector('#name')) {
+            calcular.addEventListener('click', calcularMontos);
+    
+            pase_dia.addEventListener('blur', mostrarDias);
+            pase_completo.addEventListener('blur', mostrarDias);
+            pase_dosdias.addEventListener('blur', mostrarDias);
+    
+            nombreUser.addEventListener('blur', validarFormulario);
+            lastNameUser.addEventListener('blur', validarFormulario);
+            mailUser.addEventListener('blur', validarFormulario);
+    
+            function validarFormulario(e) {
+                const campo = e.target.parentElement;
+                const errorDiv = campo.querySelector('.error');
+    
+                if (e.target.value === '') {                
+                    e.target.style.border = '1px solid red';
+                    errorDiv.innerHTML = 'Este campo es obligatorio';
+                    errorDiv.style.display = 'block';
+                } else {
+                    errorDiv.style.display = 'none';
+                    e.target.style.border = '1px solid green';
+    
+                    if (e.target.type === 'email') {
+                        if (er.test( e.target.value )) {
+                            errorDiv.style.display = 'none';
+                            e.target.style.border = '1px solid green';
+                        } else {
+                            e.target.style.border = '1px solid red';
+                            errorDiv.innerHTML = 'Este email es inválido';
+                            errorDiv.style.display = 'block';
+                        }
                     }
                 }
+    
+                
             }
-
             
-        }
-        
-
-        function calcularMontos(e) {
-            e.preventDefault();
-
-            if(regalo.value === '') {
-                alert("Debes elegir un regalo");
-                regalo.focus();
-            } else {
+    
+            function calcularMontos(e) {
+                e.preventDefault();
+    
+                if(regalo.value === '') {
+                    alert("Debes elegir un regalo");
+                    regalo.focus();
+                } else {
+                    const boletoDia = parseInt(pase_dia.value, 10) || 0;
+                    const boleto2Dias = parseInt(pase_dosdias.value, 10) || 0;
+                    const boletoCompleto = parseInt(pase_completo.value, 10) || 0;
+    
+                    const cantCamisas = parseInt(camisas.value, 10) || 0;
+                    const cantEtiquetas = parseInt(etiquetas.value, 10) || 0;
+    
+                    const totalPagar = (boletoDia * 30) + (boletoCompleto * 50) + (boleto2Dias * 45) + ((cantCamisas * 10) * .93) + (cantEtiquetas * 2);
+    
+                    const listadoProductos = [];
+    
+                    if (boletoDia >= 1) {
+                        listadoProductos.push(`${boletoDia} Pases por día`);
+                    }
+    
+                    if (boleto2Dias >= 1) {
+                        listadoProductos.push(`${boleto2Dias} Pases por 2 días`);
+                    }
+    
+                    if (boletoCompleto >= 1) {
+                        listadoProductos.push(`${boletoCompleto} Pases Completos`);
+                    }
+    
+                    if (cantCamisas >= 1) {
+                        listadoProductos.push(`${cantCamisas} Camisas`);
+                    }
+    
+                    if (cantEtiquetas >= 1) {
+                        listadoProductos.push(`${cantEtiquetas} Etiquetas`);
+                    }
+    
+                    listaProductos.innerHTML = '';
+    
+                    listaProductos.style.display = 'block';
+    
+                    listadoProductos.forEach(producto => {
+                        const row = document.createElement('p');
+                        row.innerHTML = `${producto} `;
+                        listaProductos.appendChild(row);
+                    });
+    
+                    suma.innerHTML = `$${totalPagar.toFixed(2)}`;
+    
+                }
+            }
+    
+            function mostrarDias() {
                 const boletoDia = parseInt(pase_dia.value, 10) || 0;
                 const boleto2Dias = parseInt(pase_dosdias.value, 10) || 0;
                 const boletoCompleto = parseInt(pase_completo.value, 10) || 0;
-
-                const cantCamisas = parseInt(camisas.value, 10) || 0;
-                const cantEtiquetas = parseInt(etiquetas.value, 10) || 0;
-
-                const totalPagar = (boletoDia * 30) + (boletoCompleto * 50) + (boleto2Dias * 45) + ((cantCamisas * 10) * .93) + (cantEtiquetas * 2);
-
-                const listadoProductos = [];
-
-                if (boletoDia >= 1) {
-                    listadoProductos.push(`${boletoDia} Pases por día`);
-                }
-
-                if (boleto2Dias >= 1) {
-                    listadoProductos.push(`${boleto2Dias} Pases por 2 días`);
-                }
-
-                if (boletoCompleto >= 1) {
-                    listadoProductos.push(`${boletoCompleto} Pases Completos`);
-                }
-
-                if (cantCamisas >= 1) {
-                    listadoProductos.push(`${cantCamisas} Camisas`);
-                }
-
-                if (cantEtiquetas >= 1) {
-                    listadoProductos.push(`${cantEtiquetas} Etiquetas`);
-                }
-
-                listaProductos.innerHTML = '';
-
-                listaProductos.style.display = 'block';
-
-                listadoProductos.forEach(producto => {
-                    const row = document.createElement('p');
-                    row.innerHTML = `${producto} `;
-                    listaProductos.appendChild(row);
+    
+                const dias = ['viernes', 'sabado', 'domingo'];
+    
+                const diasElegidos = [];
+    
+                dias.forEach(dia => {
+                    document.querySelector(`#${dia}`).style.display = 'none';
                 });
-
-                suma.innerHTML = `$${totalPagar.toFixed(2)}`;
-
-            }
-        }
-
-        function mostrarDias() {
-            const boletoDia = parseInt(pase_dia.value, 10) || 0;
-            const boleto2Dias = parseInt(pase_dosdias.value, 10) || 0;
-            const boletoCompleto = parseInt(pase_completo.value, 10) || 0;
-
-            const dias = ['viernes', 'sabado', 'domingo'];
-
-            const diasElegidos = [];
-
-            dias.forEach(dia => {
-                document.querySelector(`#${dia}`).style.display = 'none';
-            });
-
-            if (boletoDia > 0) {
-                diasElegidos.push('viernes');
-            }
-            if (boleto2Dias > 0) {
-                diasElegidos.push('viernes', 'sabado');
-            }
-            if (boletoCompleto > 0) {
-                diasElegidos.push('viernes', 'sabado', 'domingo');
-            }
-
-            diasElegidos.forEach(dia => {
-                document.querySelector(`#${dia}`).style.display = 'block';
-            });
+    
+                if (boletoDia > 0) {
+                    diasElegidos.push('viernes');
+                }
+                if (boleto2Dias > 0) {
+                    diasElegidos.push('viernes', 'sabado');
+                }
+                if (boletoCompleto > 0) {
+                    diasElegidos.push('viernes', 'sabado', 'domingo');
+                }
+    
+                diasElegidos.forEach(dia => {
+                    document.querySelector(`#${dia}`).style.display = 'block';
+                });
+            }            
         }
     });
 })();
@@ -170,10 +172,19 @@ $(function () {
         return false;
     });
 
-    $('.contador__content article:nth-child(1) h1').animateNumber({ number: 6 }, 1200);
-    $('.contador__content article:nth-child(2) h1').animateNumber({ number: 15 }, 1200);
-    $('.contador__content article:nth-child(3) h1').animateNumber({ number: 3 }, 1500);
-    $('.contador__content article:nth-child(4) h1').animateNumber({ number: 9 }, 1500);
+    // Animaciones para los numeros
+    const resumenLista = document.querySelector('.contador__content');
+    if (resumenLista) {
+        $('.contador__content').waypoint(() => {
+            $('.contador__content article:nth-child(1) h1').animateNumber({ number: 6 }, 1200);
+            $('.contador__content article:nth-child(2) h1').animateNumber({ number: 15 }, 1200);
+            $('.contador__content article:nth-child(3) h1').animateNumber({ number: 3 }, 1500);
+            $('.contador__content article:nth-child(4) h1').animateNumber({ number: 9 }, 1500);            
+        }, {
+            offset: '60%'
+        })
+    }
+
 
     $(".tiempo__content").countdown("2022/12/10 09:00:00", function(event) {
       $('#dias').html(event.strftime('%D')); 
