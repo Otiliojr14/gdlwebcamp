@@ -87,7 +87,8 @@ h3 {
     border: 2px solid $primaryColor;
   }
 }
-.ocultar {
+.ocultar,
+.none {
   display: none;
 }
 
@@ -96,7 +97,16 @@ h3 {
   color: $primaryColor;
 }
 
-.bar-navegacion .activo {
+.activoNav {
   border-bottom: 2px solid $primaryColor;
 }
 
+.cboxElement {
+  padding: 30px;
+  text-align: center;
+
+  .img-interior {
+    margin: 10px 0;
+    width: -webkit-fill-available;
+  }
+}

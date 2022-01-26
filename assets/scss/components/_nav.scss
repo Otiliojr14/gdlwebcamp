@@ -18,8 +18,13 @@
     width: 75%;
     display: flex;
 
-    img {
-      width: 80%;
+    a {
+      display: flex;
+      align-self: center;
+
+      img {
+        width: 80%;
+      }
     }
   }
 

@@ -85,7 +85,8 @@ h3 {
   border: 2px solid #f45225;
 }
 
-.ocultar {
+.ocultar,
+.none {
   display: none;
 }
 
@@ -94,8 +95,17 @@ h3 {
   color: #f45225;
 }
 
-.bar-navegacion .activo {
+.activoNav {
   border-bottom: 2px solid #f45225;
+}
+
+.cboxElement {
+  padding: 30px;
+  text-align: center;
+}
+.cboxElement .img-interior {
+  margin: 10px 0;
+  width: -webkit-fill-available;
 }
 
 h2 {
@@ -450,4 +460,15 @@ h2 {
   -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-column-gap: 10px;
+}
+
+.calendar {
+  width: 90%;
+  max-width: 1200px;
+}
+.calendar .day .day-events {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }

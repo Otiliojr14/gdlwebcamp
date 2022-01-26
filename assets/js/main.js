@@ -30,6 +30,9 @@
         const camisas = document.querySelector('#camisa_evento');
         const etiquetas = document.querySelector('#etiquetas');
 
+        botonRegistro.disabled = true;
+        
+        // Verifica si existe el valor en la pagina para ejecutar el script
         if (document.querySelector('#name')) {
             calcular.addEventListener('click', calcularMontos);
     
@@ -118,6 +121,12 @@
                     });
     
                     suma.innerHTML = `$${totalPagar.toFixed(2)}`;
+
+                    botonRegistro.disabled = false;
+
+                    // Agregando el precio total al input oculto
+                    const pedidoTotal = document.querySelector('#total_pedido');
+                    pedidoTotal.value = totalPagar;
     
                 }
             }
@@ -147,7 +156,7 @@
     
                 diasElegidos.forEach(dia => {
                     document.querySelector(`#${dia}`).style.display = 'block';
-                });
+                });               
             }            
         }
     });
@@ -155,17 +164,29 @@
 
 $(function () {
 
+    // Indica la pestaña activa acuerdo a la página en donde esté el usuario
+    const bodyElemento = document.querySelector('body').classList[0];
+    const classPage = bodyElemento.split('-')[0];
+    const menuEnlaces = document.querySelectorAll('.bar-navegacion a');
+    menuEnlaces.forEach(pageURL => {
+        const pagina = pageURL.dataset.url;
+        if (classPage === pagina) {
+            pageURL.classList.add('activoNav');
+        }
+    });
+
     $('.header-title h1').lettering();
 
     $('.menu-movil').on('click', function () {
         $('.bar-navegacion').slideToggle();
     });
 
-    $('#talleres').show();
+    $('#seminarios').show();
+    $('.programa__nav a:first').addClass('activo');
     $('.programa__nav a').on('click', function () {
         $('.programa__nav a').removeClass('activo');
+        $('.content-programa article').hide();
         $(this).addClass('activo');
-        $('.ocultar').hide();
         const enlace = $(this).attr('href');
         $(enlace).fadeIn();
 
@@ -192,5 +213,17 @@ $(function () {
       $('#minutos').html(event.strftime('%M')); 
       $('#segundos').html(event.strftime('%S')); 
     });
+
+    // Funcion colorbox de los invitados de acuerdo al tamaño de pixeles de la pantalla
+
+    if (document.querySelector('.invitado-info')) {
+        if (window.innerWidth > 500) {
+            $('.invitado-info').colorbox({inline:true, width:"50%"});
+        } else {
+            $('.invitado-info').colorbox({inline:true, width:"80%"});
+        }           
+    }
+
+    
     
 });
